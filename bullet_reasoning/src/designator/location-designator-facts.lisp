@@ -90,8 +90,9 @@
     (costmap ?cm)
     (bullet-world ?world)
     (object ?world ?obj)
-    (once (contact ?world ?obj ?sem-map ?contacting-link))
-    (link-pose ?sem-map ?contacting-link ?reference-pose)
+    ;; (once (contact ?world ?obj ?sem-map ?contacting-link))
+    ;; (link-pose ?sem-map ?contacting-link ?reference-pose)
+    (lisp-fun cl-transforms:make-identity-pose ?reference-pose)
     (costmap-add-orientation-generator
      (make-aligned-orientation-generator ?reference-pose ?pose)
      ?cm))
