@@ -70,10 +70,11 @@
        (("torso_lift_joint" 0.33) . ?parking-joint-states))
     (robot-arms-parking-joint-states ?parking-joint-states))
 
-  (<- (robot-pre-grasp-joint-states
-       (("torso_lift_joint" 0.165) . ?parking-joint-states))
-    (robot-arms-parking-joint-states ?parking-joint-states))
+  ;; (<- (robot-pre-grasp-joint-states
+  ;;      (("torso_lift_joint" 0.165) . ?parking-joint-states))
+  ;;   (robot-arms-parking-joint-states ?parking-joint-states))
 
-  (<- (robot-pre-grasp-joint-states
-       (("torso_lift_joint" 0.00) . ?parking-joint-states))
-    (robot-arms-parking-joint-states ?parking-joint-states)))
+  ;; (<- (robot-pre-grasp-joint-states
+  ;;      (("torso_lift_joint" 0.00) . ?parking-joint-states))
+  ;;   (robot-arms-parking-joint-states ?parking-joint-states))
+  )
