@@ -30,12 +30,12 @@
 
 (def-fact-group reachability (object-grasp assert)
   (<- (valid-grasp ?world ?object ?grasp ?sides)
-    (-> (not (object-grasp ?w ?_ ?_ ?_))
+    (-> (not (object-grasp ?world ?object ?_ ?_))
         (and
          (grasp ?grasp)
          (side ?side)
          (== ?sides (?side)))
-        (object-grasp ?w ?object ?grasp ?sides)))
+        (object-grasp ?world ?object ?grasp ?sides)))
 
   (<- (reachable ?w ?robot-name ?obj-name)
     (once (reachable ?w ?robot-name ?obj-name ?_)))
@@ -49,7 +49,7 @@
       (once
        (robot-pre-grasp-joint-states ?pre-grasp-joint-states)
        (assert (joint-state ?w ?robot-name ?pre-grasp-joint-states))
-       (valid-grasp ?w ?obj ?grasp ?sides)
+       (valid-grasp ?w ?obj-name ?grasp ?sides)
        ;; Since forall doesn't fail if its cond fails, we verify its
        ;; validity first.
        (once (member ?side ?sides))
